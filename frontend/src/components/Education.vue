@@ -1,71 +1,53 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
-import SectionTitle from './SectionTitle.vue';
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+import SectionTitle from './SectionTitle.vue'
 
-const educationHistory = ref([]);
+const educationHistory = ref([])
 
+const API_URL = import.meta.env.PROD ? '/api/education' : 'http://localhost:3000/api/education'
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/education');
-    educationHistory.value = response.data;
+    educationHistory.value = (await axios.get(API_URL)).data
   } catch (error) {
-    console.error(error);
+    console.error('Gagal mengambil data pendidikan:', error)
   }
-});
-
+})
 </script>
-  <template>
-    <section id="pendidikan" class="py-20 bg-white">
-      <div class="container mx-auto px-6">
-        <SectionTitle title="Riwayat Pendidikan" />
-        <div class="relative">
-          <div class="absolute h-full border-r-2 border-gray-300" style="left: 50%;"></div>
-          <div v-for="(edu, index) in educationHistory" :key="edu.id" class="mb-8 flex justify-between items-center w-full">
-        <div v-if="index % 2 === 0" class="w-full flex">
-      <div class="w-1/2 pr-8 text-right">
-
-        <p
-        class="font-semibold text-sky-500">{{ edu.period }}
-        </p>
-
-        <h3
-        class="text-2xl font-bold text-gray-800">{{ edu.institution }}
-        </h3>
-
-        <p
-        class="text-gray-600">{{ edu.major }}
-        </p>
-
-      </div>
-
-      <div class="w-1/2 flex justify-start">
+<template>
+  <section id="pendidikan" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <SectionTitle title="Riwayat Pendidikan" />
+      <div class="relative">
+        <div class="absolute h-full border-r-2 border-gray-300" style="left: 50%"></div>
         <div
-        class="w-4 h-4 bg-sky-500 rounded-full z-10">
-        </div>
-      </div>
+          v-for="(edu, index) in educationHistory"
+          :key="edu.id"
+          class="mb-8 flex justify-between items-center w-full"
+        >
+          <div v-if="index % 2 === 0" class="w-full flex">
+            <div class="w-1/2 pr-8 text-right">
+              <p class="font-semibold text-sky-500">{{ edu.period }}</p>
 
-      </div>
+              <h3 class="text-2xl font-bold text-gray-800">{{ edu.institution }}</h3>
+
+              <p class="text-gray-600">{{ edu.major }}</p>
+            </div>
+
+            <div class="w-1/2 flex justify-start">
+              <div class="w-4 h-4 bg-sky-500 rounded-full z-10"></div>
+            </div>
+          </div>
           <div v-else class="w-full flex">
-            <div
-            class="w-1/2 flex justify-end">
-              <div
-              class="w-4 h-4 bg-sky-500 rounded-full z-10">
-              </div>
+            <div class="w-1/2 flex justify-end">
+              <div class="w-4 h-4 bg-sky-500 rounded-full z-10"></div>
             </div>
             <div class="w-1/2 pl-8 text-left">
+              <p class="font-semibold text-sky-500">{{ edu.period }}</p>
 
-              <p
-              class="font-semibold text-sky-500">{{ edu.period }}
-              </p>
+              <h3 class="text-2xl font-bold text-gray-800">{{ edu.institution }}</h3>
 
-              <h3
-              class="text-2xl font-bold text-gray-800">{{ edu.institution }}
-              </h3>
-
-              <p
-              class="text-gray-600">{{ edu.major }}
-              </p>
+              <p class="text-gray-600">{{ edu.major }}</p>
             </div>
           </div>
         </div>
