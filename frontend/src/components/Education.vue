@@ -13,7 +13,6 @@ onMounted(async () => {
     console.error('Gagal mengambil data pendidikan:', error)
   }
 })
-
 </script>
 <template>
   <section id="pendidikan" class="py-20 bg-white">
