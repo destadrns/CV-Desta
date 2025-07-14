@@ -1,13 +1,18 @@
 {
-    "version": 2,
-    "rewrites": [
-        {
-            "source": "/api/:path*",
-            "destination": "/backend/index.js"
-        },
-        {
-            "source": "/((?!api/|.*\\..*).*)",
-            "destination": "/index.html"
-        }
-    ]
+  "version": 2,
+  "functions": {
+    "backend/api.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/backend/api.js"
+    },
+    {
+      "source": "/((?!api/|.*\\..*).*)",
+      "destination": "/index.html"
+    }
+  ]
 }

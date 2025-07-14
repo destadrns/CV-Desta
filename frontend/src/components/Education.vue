@@ -3,10 +3,7 @@ import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import SectionTitle from './SectionTitle.vue'
 
-const educationHistory = [
-    { id: 1, period: '2023 - Sekarang', institution: 'Universitas Amikom Yogyakarta', major: 'S1 - Teknik Informatika' },
-    { id: 2, period: '2020 - 2023', institution: 'SMA Negeri 1 Depok', major: 'MIPA' }
-  ];
+const educationHistory = ref([])
 
 const API_URL = import.meta.env.PROD ? '/api/education' : 'http://localhost:3000/api/education'
 onMounted(async () => {
