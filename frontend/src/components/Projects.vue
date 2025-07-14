@@ -11,7 +11,22 @@ const imageMap = {
   rental,
 }
 
-const projects = ref([])
+const projects = [
+    {
+      title: 'Website Rental',
+      image: 'rental',
+      description: 'Website untuk sewa mobil secara online.',
+      tech: ['React.js', 'Laravel', 'MySQL'],
+      link: 'https://github.com/LavinaCaco/rentaliqra'
+    },
+    {
+      title: 'APK Reservasi Hotel',
+      image: 'hotel',
+      description: 'Aplikasi untuk memudahkan admin hotel dalam mengatur penginapan.',
+      tech: ['C#'],
+      link: 'https://github.com/ddeizz/Reservasi_Hotel'
+    }
+  ];
 
 const API_URL = import.meta.env.PROD ? '/api/projects' : 'http://localhost:3000/api/projects'
 onMounted(async () => {
