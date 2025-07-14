@@ -2,31 +2,31 @@ const educationHistory = [
     { id: 1, period: '2023 - Sekarang', institution: 'Universitas Amikom Yogyakarta', major: 'S1 - Teknik Informatika' },
     { id: 2, period: '2020 - 2023', institution: 'SMA Negeri 1 Depok', major: 'MIPA' }
   ];
-  
+
   const skills = [
     { name: 'Vue.js',
       level: 'Mahir',
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg' 
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
     },
 
-    { name: 'JavaScript', 
+    { name: 'JavaScript',
       level: 'Mahir',
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' 
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
     },
 
-    { name: 'Tailwind CSS', 
+    { name: 'Tailwind CSS',
       level: 'Mahir',
       iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg'
     },
 
-    { name: 'Node.js', 
+    { name: 'Node.js',
       level: 'Menengah',
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' 
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
     },
 
-    { name: 'React.js', 
+    { name: 'React.js',
       level: 'Menengah',
-      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' 
+      iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
     },
 
     { name: 'MySQL',
@@ -35,15 +35,15 @@ const educationHistory = [
     },
 
     { name: 'Git & GitHub',
-      level: 'Mahir', 
+      level: 'Mahir',
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
     },
     { name: 'HTML5 & CSS3',
-      level: 'Mahir', 
+      level: 'Mahir',
       iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
     }
   ];
-  
+
   const projects = [
     {
       title: 'Website Rental',
@@ -60,5 +60,5 @@ const educationHistory = [
       link: 'https://github.com/ddeizz/Reservasi_Hotel'
     }
   ];
-  
+
   module.exports = { educationHistory, skills, projects };
