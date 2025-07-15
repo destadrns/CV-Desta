@@ -29,3 +29,5 @@ app.get("/api/projects", async (req, res) => {
     res.status(500).json({ error: "Gagal mengambil data proyek" });
   }
 });
+
+module.exports = app;
